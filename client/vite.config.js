@@ -9,10 +9,10 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  build: {
-    outDir: "dist",
-    rollupOptions: {
-      external: ["sonner"],
-    },
-  },
+  // build: {
+  //   outDir: "dist",
+  //   rollupOptions: {
+  //     external: ["sonner"],
+  //   },
+  // },
 });

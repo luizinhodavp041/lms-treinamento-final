@@ -12,7 +12,6 @@ import { AuthContext } from "@/context/auth-context";
 import { BusFront } from "lucide-react";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { Toaster, toast } from "sonner";
 import Confetti from "react-confetti";
 
 const busAnimationStyles = `
@@ -101,15 +100,12 @@ function AuthPage() {
       setShowBusAnimation(true);
       setShowConfetti(true);
 
-      // Mostra o toast de sucesso
-      toast.success("Usuário criado com sucesso!");
-
       // Remove as animações após o tempo exato da animação
       setTimeout(() => {
         setShowBusAnimation(false);
       }, 1500);
     } catch (error) {
-      toast.error(error?.message || "Erro ao criar usuário");
+      console.error(error?.message || "Erro ao criar usuário");
     }
   }
 
@@ -124,8 +120,6 @@ function AuthPage() {
           </div>
         </div>
       )}
-
-      <Toaster position="top-center" richColors offset="80px" />
 
       <header className="px-4 lg:px-6 h-14 flex items-center border-b bg-[#043C6C] justify-center">
         <Link to={"/"} className="flex items-center justify-center text-white">
